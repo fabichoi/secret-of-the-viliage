@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 # Download from https://github.com/Unity-Technologies/2d-extras
 /Packages/com.unity.2d.tilemap.extras/*
+
+/[Aa]ssets/TopDown*
