@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Download from https://github.com/Unity-Technologies/2d-extras
+/Packages/com.unity.2d.tilemap.extras/*
+
+/[Aa]ssets/TopDown*
