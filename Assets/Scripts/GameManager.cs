@@ -8,20 +8,40 @@ public class GameManager : MonoBehaviour
     public GameObject talkPanel;
     public Text talkText;
     public GameObject scanObject;
-    public bool isAction; 
+    public bool isAction;
+    public TalkManager talkManager;
+    public int talkIndex;
     
     public void Action(GameObject scanObj)
+    {         
+        scanObject = scanObj;
+        ObjData objData = scanObject.GetComponent<ObjData>();
+        Talk(objData.id, objData.isNpc);       
+
+        talkPanel.SetActive(isAction);
+    }
+
+    void Talk(int id, bool isNpc)
     {
-        if (isAction)
+        string talkData = talkManager.GetTalk(id, talkIndex);
+
+        if (talkData == null)
         {
-            isAction = false;            
+            isAction = false;
+            talkIndex = 0;
+            return;
+        }
+
+        if (isNpc)
+        {
+            talkText.text = talkData;
         }
         else
         {
-            isAction = true;            
-            scanObject = scanObj;
-            talkText.text = "이것의 이름은 " + scanObject.name + " 입니다.";
+            talkText.text = talkData;
         }
-        talkPanel.SetActive(isAction);
+        
+        isAction = true;
+        talkIndex++;
     }
 }
