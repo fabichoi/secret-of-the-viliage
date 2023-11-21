@@ -15,12 +15,12 @@ public class TalkManager : MonoBehaviour
         portraitData = new Dictionary<int, Sprite>();
         GenerateData();
     }
-    
+
     void GenerateData()
     {
-        talkData.Add(1000, new string[] {"안녕:0", "이 마을은 처음이지?:1"});
+        talkData.Add(1000, new string[] { "안녕:0", "이 마을은 처음이지?:1" });
         talkData.Add(100, new string[] { "나무 상자" });
-        
+
         portraitData.Add(1000 + 0, portraitArr[0]);
         portraitData.Add(1000 + 1, portraitArr[1]);
         portraitData.Add(1000 + 2, portraitArr[2]);
